@@ -1,4 +1,4 @@
-import Search from "./assets/componenets/Search";
+giimport Search from "./assets/componenets/Search";
 import Spinner from "./assets/componenets/Spinner";
 import MovieCard from "./assets/componenets/MovieCard";
 import { useDebounce } from "react-use";
