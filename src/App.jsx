@@ -1,4 +1,4 @@
-giimport Search from "./assets/componenets/Search";
+import Search from "./assets/componenets/Search";
 import Spinner from "./assets/componenets/Spinner";
 import MovieCard from "./assets/componenets/MovieCard";
 import { useDebounce } from "react-use";
@@ -22,31 +22,6 @@ const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
-  //const [trendingMovies, setTrendingMovies] = useState([]);
-
-  /* const fetchMovies = async () => {
-    setIsLoading(true);
-    setErrorMessage("");
-    try {
-      const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
-      const response = await fetch(endpoint, API_OPTION);
-      if (!response.ok) {
-        throw new Error("Faild to fetch movies");
-      }
-      const data = await response.json();
-
-      if (data.Response === "false") {
-        setErrorMessage(data.Error || "Faild to fetch movies");
-        setMovieList([]);
-        return;
-      }
-    } catch (error) {
-      console.error(`Error fetching movies: ${error}`);
-      setErrorMessage("Error fetching movies, Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
-  };*/
 
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
   const fetchMovies = async (query = "") => {
@@ -79,22 +54,12 @@ const App = () => {
     }
   };
 
-  /* const loadTrendingMovies = async () => {
-    try {
-      const movies = await getTrendingMovie();
-      setTrendingMovies(movies);
-    } catch (error) {
-      console.log(error);
-    }
-  };*/
+
 
   useEffect(() => {
     fetchMovies(debouncedSearchTerm);
   }, [debouncedSearchTerm]);
 
-  /* useEffect(() => {
-    loadTrendingMovies();
-  }, []);*/
 
   return (
     <main >
@@ -102,41 +67,39 @@ const App = () => {
 
       <div className="wrapper">
         <header>
-          <div class="flex w-full justify-between items-center">
-            <nav class="flex gap-x-5 lg:gap-x-9 h-14">
-              <div class="shrink-0">
-                <img src="./logo.png" alt="Golden Coffee" />
+          <div class="flex w-full justify-between items-center mb-20">
+            <nav class="flex gap-x-5 lg:gap-x-9">
+              <div class="shrink-0 w-[180px] ml-[150px]">
+                <img src="./Logoo.png" alt="Movie Logo" />
               </div>
-              <ul class="flex gap-x-5 lg:gap-x-9 items-center text-xl h-full text-gray-300 tracking-tightest child:leading-[56px] ">
-                <li class="font-DanaDemi text-orange-200">
-                  <a href="#">صفحه اصلی</a>
-                </li>
-
-                <li>
-                  <a href="#">خانه</a>
+              <ul class="flex  lg:gap-x-10 items-center justify-center text-xl h-full text-gray-300 mt-5 ">
+                <li class="font-DanaDemi text-orange-300">
+                  <a href="#">خانـــه</a>
                 </li>
                 <li>
-                  <a href="#">بلاگ</a>
+                  <a href="#">فیلــم</a>
                 </li>
                 <li>
-                  <a href="#">درباره ما</a>
+                  <a href="#">سریــال</a>
                 </li>
                 <li>
-                  <a href="#">تماس با ما</a>
+                  <a href="#">انیمیشــن</a>
+                </li>
+                <li>
+                  <a href="#">اشتــراک</a>
                 </li>
               </ul>
             </nav>
           </div>
           <img src="./hero.png" alt="Hero Banner" />
-          <h1>
-            Find <span className="text-gradient">Movies</span>You'll Enjoy
-            Without the Hassle
+          <h1 className="text-5xl py-8">
+        اینجا میتونی  <span className="text-gradient">فیلم </span> مورد علاقت را پیدا کنی!
           </h1>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
         <section className="all-movies">
-          <h2>All Movies</h2>
+          <h2 className="text-2xl">جدیدترین فیلم‌ها</h2>
 
           {isLoading ? (
             <Spinner />
