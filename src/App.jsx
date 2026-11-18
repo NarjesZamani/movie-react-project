@@ -3,7 +3,7 @@ import Spinner from "./assets/componenets/Spinner";
 import MovieCard from "./assets/componenets/MovieCard";
 import { useDebounce } from "react-use";
 import { useEffect, useState } from "react";
-//import { getTrendingMovie, updateSearchCount } from "./appwrite";
+
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TDMB_API_KEY;
@@ -43,9 +43,7 @@ const App = () => {
 
       setMovieList(data.results || []);
 
-      if (query && data.results.length > 0) {
-        await updateSearchCount(query, data.results[0]);
-      }
+
     } catch (error) {
       console.error(`Error fetching movies: ${error}`);
       setErrorMessage("Error fetching movies, Please try again later.");
@@ -67,13 +65,13 @@ const App = () => {
 
       <div className="wrapper">
         <header>
-          <div class="flex w-full justify-between items-center mb-20">
-            <nav class="flex gap-x-5 lg:gap-x-9">
-              <div class="shrink-0 w-[180px] ml-[150px]">
+          <div className="flex w-full justify-between items-center mb-20">
+            <nav className="flex gap-x-5 lg:gap-x-9">
+              <div className="shrink-0 w-[180px] ml-[150px]">
                 <img src="./Logoo.png" alt="Movie Logo" />
               </div>
-              <ul class="flex  lg:gap-x-10 items-center justify-center text-xl h-full text-gray-300 mt-5 ">
-                <li class="font-DanaDemi text-orange-300">
+              <ul className="flex  lg:gap-x-10 items-center justify-center text-xl h-full text-gray-300 mt-5 ">
+                <li className="font-DanaDemi text-orange-300">
                   <a href="#">خانـــه</a>
                 </li>
                 <li>
