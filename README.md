@@ -1,16 +1,65 @@
-# React + Vite
+# Movie Search App 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple movie search application built with React and Vite.
 
-Currently, two official plugins are available:
+## About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Movie Search App is a personal practice project that allows users to browse movies and search for their favorite titles.
 
-## React Compiler
+Movie data is fetched from an external API and displayed dynamically on the main page.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Display a list of movies fetched from an API.
+- Search for movies by title.
+- Show search results based on user input.
+- Simple and clean user interface.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built With
+
+- React
+- JavaScript
+- CSS
+- Vite
+
+## Getting Started
+
+To run this project locally, follow these steps.
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone [YOUR_REPOSITORY_URL](https://github.com/NarjesZamani/movie-react-project)
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd movie-react-project
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open the local URL provided by Vite in your browser.
+
+## Project Status
+
+Completed – Personal Practice Project.
+
+## Author
+
+Narjes Zamani
+
+GitHub: [NarjesZamani](https://github.com/NarjesZamani)
